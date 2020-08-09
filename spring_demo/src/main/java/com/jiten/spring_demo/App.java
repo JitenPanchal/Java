@@ -8,6 +8,7 @@ public class App {
 
 		System.out.println(System.getProperty("user.dir"));
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		
 		Vehicle obj = (Vehicle) context.getBean(Car.class);
 		obj.drive();
 
