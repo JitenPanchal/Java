@@ -2,14 +2,16 @@ package com.jiten.junit5Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
 
 import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.internal.verification.Times;
 
 import com.jiten.junit5Mockito.data.api.ITodoService;
 import com.jiten.junit5Mockito.data.api.TodoServiceImpl;
@@ -27,7 +29,7 @@ public class TodoBusinessImplMocikitoTests {
 
 		List<String> todos = todoServiceImpl.retrieveTodosRelatedToSpring("dummy");
 
-//		verify(todoServiceMock);
+		verify(todoServiceMock).retrieveTodos(anyString());
 
 		assertEquals(1, todos.size());
 	}
