@@ -1,6 +1,6 @@
 package testOOPs;
 
-public class A extends BaseClass{
+public class DerivedA extends BaseClass{
 	protected int y = 10;
 	protected String  x = "DerivedClass";
 	
