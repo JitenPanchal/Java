@@ -60,7 +60,7 @@ class MathUtilitiesTest {
 		void testAdd() {
 			boolean assumption = true;
 			assumeTrue(assumption);
-			assertEquals(2, mathUtilities.add(1, 1), () -> "this should add 2 numbers");
+			assertEquals(21, mathUtilities.add(1, 1), () -> "this should add 2 numbers with assumtion true");
 			System.out.println(this);
 		}
 	}
