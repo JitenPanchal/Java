@@ -8,7 +8,13 @@ public class App {
 		ApplicationContext factory = new AnnotationConfigApplicationContext(AppConfig.class);
 
 		Samsung s10 = factory.getBean(Samsung.class);
+		
 
 		s10.config();
+		
+		
+		IProductService p = factory.getBean(IProductService.class);
+		
+		p.createProduct("jiten", 4.05);
 	}
 }

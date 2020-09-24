@@ -11,7 +11,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic.Verification;
 import org.mockito.internal.verification.Times;
+import org.mockito.internal.verification.VerificationModeFactory;
+import org.mockito.verification.VerificationMode;
 
 import com.jiten.junit5Mockito.data.api.ITodoService;
 import com.jiten.junit5Mockito.data.api.TodoServiceImpl;
@@ -28,8 +31,8 @@ public class TodoBusinessImplMocikitoTests {
 		TodoServiceImpl todoServiceImpl = new TodoServiceImpl(todoServiceMock);
 
 		List<String> todos = todoServiceImpl.retrieveTodosRelatedToSpring("dummy");
-
-		verify(todoServiceMock).retrieveTodos(anyString());
+		
+		verify(todoServiceMock,VerificationModeFactory.times(1)).retrieveTodos(anyString());
 
 		assertEquals(1, todos.size());
 	}

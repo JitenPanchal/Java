@@ -2,6 +2,7 @@ package com.jiten.junit5;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.fail;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
@@ -60,7 +61,7 @@ class MathUtilitiesTest {
 		void testAdd() {
 			boolean assumption = true;
 			assumeTrue(assumption);
-			assertEquals(21, mathUtilities.add(1, 1), () -> "this should add 2 numbers with assumtion true");
+			assertEquals(2, mathUtilities.add(1, 1), () -> "this should add 2 numbers with assumtion true");
 			System.out.println(this);
 		}
 	}
